@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "dev": "env IS_ELECTRON=true webpack --config ./build/webpack.dev.config.js && electron .",
-    "build": "env IS_ELECTRON=true webpack --config ./build/webpack.prod.config.js"
+    "dev": "rm -rf dist && env IS_ELECTRON=true webpack --config ./build/webpack.dev.config.js && electron .",
+    "build": "rm -rf dist && env IS_ELECTRON=true webpack --config ./build/webpack.prod.config.js && electron-packager . --out=release --platform=linux --arch=x64 --icon=./dist/assets/favicon/favicon.png --prune --asar --overwrite"
   },
   "dependencies": {
     "@babel/runtime": "^7.9.0",
@@ -36,6 +36,7 @@
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "electron": "^8.2.0",
+    "electron-packager": "^14.2.1",
     "fibers": "^4.0.2",
     "file-loader": "^6.0.0",
     "fork-ts-checker-webpack-plugin": "^4.1.1",
