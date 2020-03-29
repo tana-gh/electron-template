@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "dev": "rm -rf dist && env IS_ELECTRON=true webpack --config ./build/webpack.dev.config.js && electron .",
-    "build": "rm -rf dist && env IS_ELECTRON=true webpack --config ./build/webpack.prod.config.js && electron-packager . --out=release --platform=linux --arch=x64 --icon=./dist/assets/favicon/favicon.png --prune --asar --overwrite"
+    "build": "rm -rf dist release && env IS_ELECTRON=true webpack --config ./build/webpack.prod.config.js && electron-packager . --out=release --platform=linux --arch=x64 --icon=./dist/assets/favicon/favicon.png --prune --asar --overwrite"
   },
   "dependencies": {
     "@babel/runtime": "^7.9.0",
