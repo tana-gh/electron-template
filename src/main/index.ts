@@ -11,7 +11,6 @@ const createWindow = () => {
     win.loadFile(`${__dirname}/index.html`)
 }
 
-app.allowRendererProcessReuse = true
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
